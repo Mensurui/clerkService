@@ -1,3 +1,17 @@
+syntax = "proto3";
+
 package service;
 
-option go_package = 
+option go_package = "github.com/Mensurui/clerkService/tree/main/proto/service";
+
+service Service{
+  rpc GetList(GetListRequest) returns (GetListResponse);
+}
+
+message GetListRequest{
+  string name = 1;
+}
+
+message GetListResponse{
+  repeated string list = 1;
+}
